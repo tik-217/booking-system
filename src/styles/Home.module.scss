@@ -1,0 +1,785 @@
+@import "./varriable.scss";
+
+.header {
+  background: url("/img/datingscout-jEefk3YwWZ0-unsplash.jpg");
+  height: 700px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+}
+
+.header__topWrapper {
+  background: rgb(255 255 255 / 76%);
+  padding: 27px 8%;
+  -webkit-box-shadow: 0px 0px 62px -8px rgba(22, 112, 180, 0.2);
+  -moz-box-shadow: 0px 0px 62px -8px rgba(22, 112, 180, 0.2);
+  box-shadow: 0px 0px 62px -8px rgba(22, 112, 180, 0.2);
+
+  & > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1360px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .header__top_logo {
+    text-decoration: none;
+
+    & h2 {
+      font-size: $big-title-size;
+      text-transform: uppercase;
+      margin-bottom: 0;
+      font-weight: 600;
+    }
+  }
+
+  .header__top_descktop {
+    display: flex;
+
+    .header__top_icons {
+      display: flex;
+      justify-content: space-between;
+      margin-right: 20px;
+      width: 40px;
+    }
+  }
+
+  .header__menu_dispabled {
+    display: none;
+  }
+
+  .header__topWrapper_menu {
+    display: none;
+    cursor: pointer;
+  }
+
+  .header__top_mobileIcons {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    div {
+      width: 40px;
+      margin-right: 15px;
+    }
+
+    a:first-child {
+      margin-right: 8px;
+    }
+
+    a:last-child {
+      margin-top: 2px;
+    }
+  }
+
+  .header__navigate {
+    display: flex;
+    list-style: none;
+    margin-bottom: 0;
+
+    a {
+      color: #26497e;
+      margin-left: 10px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.15s ease-in-out;
+    }
+
+    a:hover {
+      color: $font-link-active;
+    }
+  }
+
+  .close__icons {
+    display: none;
+  }
+}
+
+.header__booking {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  height: 80%;
+  margin-left: $default-margin-lr;
+  margin-right: $default-margin-lr;
+
+  & > div {
+    width: 100%;
+    max-width: 1360px;
+    margin: 0 auto;
+  }
+
+  .header__booking_title {
+    background: rgb(255 255 255 / 76%);
+    padding: 20px 30px;
+    width: fit-content;
+    border-radius: 10px;
+    margin-bottom: 30px;
+
+    h3 {
+      font-size: $very-big-title-size;
+    }
+
+    h5 {
+      font-size: $small-title-size;
+      font-weight: 200;
+    }
+  }
+
+  .header__booking_form {
+    display: grid;
+    grid-template-areas: "calendar guests children btn";
+    gap: 10px;
+    background: rgb(255 255 255 / 76%);
+    padding: 32px;
+    border-radius: 15px;
+    width: 100%;
+    box-sizing: border-box;
+    align-items: normal;
+  }
+
+  .header__booking_form button {
+    background: $font-color;
+    outline: none;
+    color: white;
+    box-shadow: none;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $font-link-active;
+    }
+  }
+
+  .header__booking_calendar {
+    border-radius: 10px;
+    grid-area: calendar;
+  }
+
+  .header__booking_guests {
+    grid-area: guests;
+  }
+
+  .header__booking_children {
+    grid-area: children;
+  }
+
+  .header__booking_btn {
+    grid-area: btn;
+  }
+
+  .header__booking_form {
+    input {
+      outline: none;
+      padding: 0 15px;
+      border: none;
+      border-radius: 10px;
+      transition: all 0.2s ease-in-out;
+
+      &[type="number"] {
+        height: 100%;
+        width: 100%;
+        box-sizing: border-box;
+      }
+    }
+  }
+}
+
+.header__arrowBottom {
+  width: 100%;
+  bottom: 0;
+  position: absolute;
+  margin-bottom: 40px;
+
+  img {
+    cursor: pointer;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    height: fit-content;
+    position: absolute;
+    animation: header__arrowBottom 1.4s infinite;
+  }
+
+  @keyframes header__arrowBottom {
+    0% {
+      transform: translate(0, -20px);
+    }
+    50% {
+      transform: translate(0, -17px);
+    }
+    100% {
+      transform: translate(0, -20px);
+    }
+  }
+}
+
+// main
+
+.main {
+  max-width: 1360px;
+  margin: 0 auto;
+}
+
+// main__popularDirections
+
+.main__popularDirections {
+  margin: 100px 8% 0;
+
+  h4 {
+    font-size: $big-title-size;
+    text-align: center;
+  }
+}
+
+.popularDirections__elements {
+  margin-top: 120px;
+  display: grid;
+  grid-auto-flow: column;
+  gap: 110px 10px;
+  justify-content: space-between;
+  grid-template-rows: repeat(2, 1fr);
+}
+
+.popularDirections__elements > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  filter: drop-shadow(0px 0px 30px rgba(0, 0, 0, 0.3));
+  user-select: none;
+  cursor: pointer;
+}
+
+.popularDirections__elements_image {
+  height: 200px;
+  width: 26vw;
+  max-width: 360px;
+  overflow: hidden;
+  position: relative;
+  border-radius: 10px;
+
+  img {
+    border-radius: 10px;
+    z-index: 2;
+    height: 130% !important;
+    width: auto !important;
+    left: 50% !important;
+    top: 50% !important;
+    transform: translate(-50%, -50%);
+    color: transparent;
+    transition: all 0.4s ease-in-out;
+
+    &:hover {
+      height: 133% !important;
+    }
+  }
+}
+
+.popularDirections__elements h3 {
+  font-weight: 600;
+  position: absolute;
+  z-index: 1;
+  top: -40px;
+  font-size: $very-big-title-size;
+  background: linear-gradient(180deg, #26497e 0%, rgba(38, 73, 126, 0) 100%);
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.popularDirections__elements span {
+  background: linear-gradient(180deg, rgba(38, 73, 126, 0) 0%, #26497e 100%);
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: absolute;
+  z-index: 1;
+  bottom: -23px;
+}
+
+// main__topHotels
+
+.main__topHotels {
+  margin: 120px 8% 0;
+
+  h4 {
+    font-size: $big-title-size;
+    text-align: center;
+  }
+}
+
+.main__topHotels_list {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 60px 30px;
+  justify-content: space-between;
+  margin-top: 80px;
+}
+
+.hotelCard {
+  .hotelCard__imgWrapper {
+    position: relative;
+    overflow: hidden;
+    height: 130px;
+    width: 100%;
+    border-radius: 10px;
+
+    img {
+      position: absolute;
+      top: 50% !important;
+      left: 50% !important;
+      right: 0;
+      height: 130% !important;
+      width: auto !important;
+      bottom: 0;
+      transform: translate(-50%, -50%);
+      border-radius: 10px;
+    }
+  }
+
+  .hotelCard__description {
+    display: flex;
+    flex-direction: column;
+
+    h6 {
+      margin-top: 5px;
+    }
+
+    p {
+      margin-bottom: 10px;
+      font-size: $small-text-size;
+    }
+
+    span {
+      margin-bottom: 5px;
+    }
+
+    .hotelCard__rewiew {
+      background: #378e64;
+      padding: 5px;
+      display: inline;
+      color: #fff;
+      border-radius: 5px;
+      width: min-content;
+      font-size: $small-text-size;
+    }
+  }
+}
+
+// main__travelersBlog
+
+.main__travelersBlog {
+  margin: $default-margin;
+
+  h4 {
+    font-size: $big-title-size;
+    text-align: center;
+  }
+
+  .main__travelersBlog_list {
+    margin-top: 80px;
+    display: grid;
+    gap: 40px 30px;
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.travelersBlog {
+  max-width: 300px;
+
+  .travelersBlog__imgWrapper {
+    position: relative;
+    overflow: hidden;
+    height: 180px;
+    width: 100%;
+    border-radius: 10px;
+    display: grid;
+    grid-auto-flow: column;
+    gap: 30px;
+
+    & > img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      right: 0;
+      bottom: 0;
+      width: auto;
+      transform: translate(-50%, -50%);
+      border-radius: 10px;
+      height: 100%;
+    }
+  }
+
+  .travelersBlog__description {
+    display: flex;
+    flex-direction: column;
+    padding: 5px 10px;
+
+    & > div {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 8px;
+
+      .travelersBlog__description_date {
+        font-size: 0.8em;
+        color: $font-link;
+      }
+
+      .travelersBlog__description_meta {
+        align-items: center;
+        display: flex;
+
+        & > div {
+          align-items: center;
+          display: flex;
+
+          img {
+            margin-right: 3px;
+          }
+
+          span {
+            font-size: 0.8em;
+            color: $font-link;
+          }
+        }
+
+        & > div:first-child {
+          margin-right: 10px;
+        }
+      }
+    }
+
+    p {
+      max-width: 300px;
+      margin-top: 8px;
+
+      strong {
+        color: #c37878;
+        font-weight: 400;
+      }
+    }
+  }
+}
+
+// footer
+
+.footer {
+  margin-top: 100px;
+  padding: 50px 8%;
+  background-color: $font-link-light;
+  display: flex;
+  flex-direction: column;
+
+  & > div {
+    max-width: 1360px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .footer__top {
+    display: grid;
+    grid-template-areas: "ul1 ul2 icons";
+    gap: 30px;
+
+    ul {
+      list-style: none;
+
+      li {
+        margin-bottom: 3px;
+      }
+
+      li > a {
+        text-decoration: none;
+        transition: all 0.15s ease-in-out;
+      }
+
+      li > a:hover {
+        color: $font-link-active;
+      }
+
+      li:first-child {
+        font-size: $small-title-size;
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+    }
+
+    ul:first-child {
+      grid-area: ul1;
+    }
+
+    ul:last-child {
+      grid-area: ul2;
+    }
+
+    .footer__icons {
+      grid-area: icons;
+      display: flex;
+      justify-content: flex-end;
+
+      a {
+        height: fit-content;
+      }
+
+      a:first-child {
+        margin-right: 8px;
+      }
+
+      a:last-child {
+        margin-top: 1px;
+      }
+    }
+  }
+
+  .footer__bottom {
+    margin-top: 100px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    .header__top_logo {
+      text-decoration: none;
+
+      h2 {
+        font-size: $big-title-size;
+        text-transform: uppercase;
+        font-weight: 600;
+        margin-bottom: 0;
+      }
+    }
+
+    .footer__bottom_copyright {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      justify-content: center;
+
+      p {
+        font-size: $desc-text-size;
+      }
+
+      span {
+        font-size: $desc-text-size;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .header__topWrapper {
+    padding-left: $tablet-margin-lr;
+    padding-right: $tablet-margin-lr;
+  }
+
+  .header__booking {
+    margin-left: $tablet-margin-lr;
+    margin-right: $tablet-margin-lr;
+  }
+
+  .header__booking .header__booking_calendar {
+    flex: 3;
+  }
+
+  .header .header__booking_form {
+    padding: 20px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .header__booking .header__booking_form {
+    grid-template-areas:
+      "calendar guests children"
+      "btn btn btn";
+  }
+
+  .header__booking_btn {
+    padding: 10px 15px;
+  }
+
+  .popularDirections__elements h3 {
+    font-size: $big-title-size;
+    top: -28px;
+  }
+
+  .popularDirections__elements_image {
+    height: 150px;
+  }
+
+  .main__topHotels_list {
+    grid-template-columns: repeat(3, 1fr);
+
+    .hotelCard__imgWrapper {
+      height: 180px;
+    }
+  }
+
+  .main__travelersBlog .main__travelersBlog_list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header__topWrapper {
+    padding-left: $tablet-margin-lr;
+    padding-right: $tablet-margin-lr;
+
+    .header__top_descktop {
+      display: none;
+    }
+
+    .header__topWrapper_menu {
+      display: block;
+    }
+
+    .header__top_mobileIcons {
+      display: flex;
+      flex-direction: column-reverse;
+      justify-content: center;
+      align-items: center;
+      background: #fff;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 5;
+
+      body {
+        overflow: hidden !important;
+      }
+
+      div:first-child {
+        margin-right: 0;
+      }
+
+      ul {
+        margin-bottom: 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        li {
+          margin-bottom: 10px;
+
+          a {
+            font-size: $middle-title-size;
+          }
+        }
+      }
+
+      .close__icons {
+        display: block;
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .header__booking .header__booking_form {
+    grid-template-areas:
+      "calendar calendar calendar calendar"
+      "guests guests children children"
+      "btn btn btn btn";
+  }
+
+  .header .header__booking_guests,
+  .header .header__booking_children {
+    input {
+      padding: 10px 15px;
+    }
+  }
+
+  .popularDirections__elements {
+    justify-content: space-around;
+    grid-template-rows: repeat(3, 1fr);
+    margin-top: 80px;
+    gap: 80px 0;
+
+    .popularDirections__elements_image {
+      width: 36vw;
+    }
+  }
+
+  .main__topHotels_list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .travelersBlog .travelersBlog__imgWrapper {
+    height: 200px;
+  }
+
+  .main__travelersBlog .main__travelersBlog_list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer .footer__top {
+    grid-template-areas:
+      "ul1 ul2"
+      "icons icons";
+    justify-items: center;
+    gap: 50px 30px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .header__topWrapper {
+    padding-left: $mobile-margin-lr;
+    padding-right: $mobile-margin-lr;
+  }
+
+  .header .header__booking_title {
+    padding: 15px;
+    margin-bottom: 10px;
+
+    h3 {
+      width: 160px;
+      font-size: $middle-title-size;
+    }
+
+    h5 {
+      font-size: $small-text-size;
+    }
+  }
+
+  .popularDirections__elements {
+    justify-content: space-around;
+    grid-template-rows: repeat(6, 1fr);
+
+    .popularDirections__elements_image {
+      width: 80vw;
+
+      img {
+        height: auto !important;
+        width: 150% !important;
+      }
+    }
+  }
+
+  .main__topHotels_list {
+    grid-template-columns: 1fr;
+
+    .hotelCard {
+      padding: 0 30px;
+
+      img {
+        height: 180% !important;
+      }
+    }
+  }
+
+  .main__travelersBlog .main__travelersBlog_list {
+    grid-template-columns: 1fr;
+  }
+
+  .main__travelersBlog_list {
+    justify-items: center;
+    width: 80vw;
+  }
+}

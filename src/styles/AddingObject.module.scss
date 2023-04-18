@@ -1,0 +1,383 @@
+@import "./varriable.scss";
+
+.header__topWrapper {
+  display: flex;
+  justify-content: center;
+  box-shadow: none;
+}
+
+.nextBtn {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+
+  button {
+    padding: 12px 60px;
+    width: min-content;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    background: $font-color;
+    box-shadow: none;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      background: $font-link-active;
+    }
+  }
+}
+
+.addingObject {
+  margin: $default-margin;
+  display: flex;
+  justify-content: center;
+
+  h3 {
+    font-size: $big-title-size;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  & > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 600px;
+    width: 100%;
+  }
+
+  .addingObject__inputStyle {
+    & > div {
+      label {
+        font-size: $small-text-size;
+        margin: 5px 10px;
+      }
+
+      input {
+        padding: 12px 20px;
+        border: none;
+        width: 100%;
+        outline: none;
+        border-radius: 10px;
+        box-sizing: border-box;
+        background: $bg-blue;
+      }
+
+      input:last-child {
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  .addingObject__actions {
+    width: 100%;
+
+    p {
+      margin-bottom: 10px;
+      font-size: $small-text-size;
+    }
+
+    div {
+      display: flex;
+      width: 100%;
+
+      a {
+        flex: 1;
+
+        &:first-child {
+          margin-right: 15px;
+        }
+      }
+    }
+
+    button {
+      padding: 12px;
+      width: 100%;
+      margin-bottom: 10px;
+      border-radius: 10px;
+      border: none;
+      outline: none;
+      background: $font-color;
+      box-shadow: none;
+      font-size: 0.9em;
+      color: #fff;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+        background: $font-link-active;
+      }
+    }
+  }
+
+  .addingObject__inputs {
+    width: 100%;
+
+    & > div {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  .addingObject__inputs_unactive {
+    label {
+      color: $font-grey;
+    }
+
+    input {
+      background: $bg-grey !important;
+    }
+
+    & > div {
+      &:last-child {
+        align-items: flex-end;
+
+        button {
+          background: $bg-grey;
+          cursor: auto;
+
+          &:hover {
+            background: $bg-grey;
+          }
+        }
+      }
+    }
+  }
+
+  .secondStep {
+    display: flex;
+    align-items: flex-end;
+
+    .secondStep__twoColumns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .secondStep__oneColumn {
+      width: 100%;
+    }
+
+    input {
+      margin-top: 5px;
+    }
+  }
+
+  .secondStep__servicesList {
+    width: 100%;
+  }
+
+  .servicesList {
+    .servicesList__tags {
+      margin-top: 40px;
+      margin-bottom: 40px;
+    }
+
+    h4 {
+      font-size: $small-title-size;
+      color: black;
+    }
+
+    p {
+      margin-top: 5px;
+      font-size: $small-text-size;
+      color: black;
+    }
+
+    svg {
+      font-size: 11px;
+    }
+
+    .servicesList__items {
+      margin-top: 20px;
+
+      & > div {
+        margin-bottom: 25px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-content: space-between;
+        grid-gap: 40px;
+        gap: 40px;
+        color: black;
+        width: 100%;
+      }
+
+      h5 {
+        font-weight: 600;
+        margin-bottom: 15px;
+        color: black;
+      }
+
+      span {
+        font-size: 0.9em;
+        color: black;
+      }
+
+      label {
+        padding: 3px 0;
+      }
+
+      p {
+        font-size: 0.9em;
+        text-decoration: underline;
+        color: $font-link;
+        margin-left: 25px;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .rooms {
+    margin-bottom: 50px;
+
+    h4 {
+      font-size: $middle-title-size;
+      margin-bottom: 10px;
+    }
+
+    .rooms__photo {
+      margin-bottom: 20px;
+
+      & > div {
+        position: relative;
+        height: 200px;
+        width: 170px;
+        cursor: pointer;
+
+        &::after {
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 30px;
+          height: 30px;
+          background: url("/icons/plus.svg");
+          background-repeat: no-repeat;
+          transform: translate(-50%, -50%);
+        }
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          background: $bg-grey;
+          border-radius: 10px;
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      h5 {
+        margin: 30px 0 20px;
+        font-size: $small-title-size;
+      }
+    }
+
+    .rooms__twoColumns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+
+      div {
+        input {
+          margin-top: 5px;
+        }
+      }
+    }
+
+    .nextBtn {
+      flex-direction: column;
+      margin-top: 20px;
+
+      p {
+        font-size: 0.9em;
+        text-decoration: underline;
+        color: #1976d2;
+        margin-left: 25px;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .fiveStep {
+    h4 {
+      font-size: $small-title-size;
+      margin-bottom: 30px;
+      margin-top: 30px;
+      color: #000;
+    }
+
+    .fiveStep__contracts {
+      display: flex;
+      flex-direction: column;
+
+      & > div {
+        margin-bottom: 10px;
+
+        span {
+          color: #000;
+
+          small {
+            color: $font-link;
+          }
+        }
+      }
+    }
+
+    .nextBtn {
+      display: flex;
+      flex-direction: column;
+
+      p {
+        margin-top: 30px;
+        font-size: 10px;
+        min-width: 280px;
+        text-align: end;
+        color: $font-grey;
+      }
+
+      button {
+        margin-top: 10px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .addingObject {
+    margin: $mobile-margin !important;
+  }
+
+  .addingObject .rooms__twoColumns,
+  .addingObject .secondStep__twoColumns {
+    gap: 10px !important;
+  }
+
+  .addingObject h3 {
+    font-size: $middle-title-size;
+    margin-bottom: 15px;
+  }
+
+  .addingObject__inputs {
+    label {
+      margin: 5px 3px !important;
+      font-size: 10px !important;
+    }
+  }
+
+  .fiveStep .fiveStep__contracts .ant-col label {
+    span {
+      width: min-content !important;
+      min-width: 105px !important;
+      font-size: 10px !important;
+    }
+  }
+
+  .servicesList span {
+    font-size: $small-text-size !important;
+  }
+}

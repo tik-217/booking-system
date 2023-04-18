@@ -1,0 +1,26 @@
+@import-normalize;
+@import "./varriable.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  color: $font-color;
+  font-family: var(--noto_serif);
+}
+
+.ant-input-number-group .ant-input-number-group-addon {
+  background: #fafafa;
+}
+
+.form__requiredText {
+  margin-left: 3px;
+  color: #d62d0e;
+  font-size: $small-text-size;
+}
+
+@media screen and (max-width: 1280px) {
+  * {
+    font-size: 14px;
+  }
+}
