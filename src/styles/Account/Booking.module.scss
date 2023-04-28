@@ -1,0 +1,206 @@
+@import "../generalStyles/varriable.scss";
+@import "./General.scss";
+
+.content {
+  h5 {
+    font-size: $middle-title-size;
+    margin: 20px 0;
+    color: $font-text;
+  }
+}
+
+.rooms__list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.room__card {
+  width: 100%;
+  background: #fff;
+  padding: 10px;
+  display: grid;
+  grid-template-areas:
+    "image image"
+    "name name"
+    "period cost";
+  justify-items: stretch;
+  grid-auto-flow: column;
+  align-items: center;
+  box-sizing: border-box;
+  position: relative;
+  gap: 20px;
+
+  &::after {
+    content: "";
+    height: 100%;
+    width: 1px;
+    background: $font-grey;
+  }
+
+  .room__card_image {
+    position: relative;
+    grid-area: image;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+
+    .room__card_rewiew {
+      position: absolute;
+      top: 0;
+      left: 20px;
+      background: $font-active;
+      padding: 8px 6px;
+      color: #fff;
+      border-bottom-left-radius: 8px;
+      border-bottom-right-radius: 8px;
+      z-index: 2;
+    }
+
+    .room__image_list {
+      display: flex;
+      height: inherit;
+      overflow: auto;
+      overflow-y: hidden;
+      width: 100%;
+      height: 100%;
+
+      & > div {
+        width: 300px;
+        margin-right: 10px;
+        height: inherit;
+
+        &:last-child {
+          margin-right: 0;
+        }
+
+        img {
+          position: relative !important;
+          height: 300px;
+          width: inherit;
+        }
+      }
+    }
+
+    img {
+      height: inherit !important;
+      width: auto !important;
+      left: 50% !important;
+      top: 50% !important;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  .room__card_name {
+    grid-area: name;
+
+    h4 {
+      font-size: $small-title-size;
+      text-align: initial;
+      color: $font-text;
+    }
+
+    & > div {
+      display: flex;
+      align-items: center;
+      margin-top: 8px;
+
+      p {
+        font-size: $small-text-size;
+      }
+
+      img {
+        margin: 0 4px;
+      }
+    }
+  }
+
+  .room__card_period {
+    grid-area: period;
+
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+
+    h6 {
+      font-size: $small-title-size;
+      margin-bottom: 5px;
+      color: $font-text;
+    }
+
+    p {
+      color: $font-color;
+    }
+  }
+
+  .room__card_cost {
+    grid-area: cost;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    height: 100%;
+
+    p {
+      font-size: $middle-title-size;
+      font-weight: 600;
+      color: $font-text;
+    }
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .rooms__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .siteLayout {
+    font-size: 14px;
+
+    .room__card {
+      .room__card_cost {
+        margin-bottom: 20px;
+        margin-right: 20px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .rooms__list {
+    .room__card {
+      grid-template-rows: 200px;
+      grid-template-areas:
+        "image image"
+        "name name"
+        "period cost";
+    }
+
+    .room__card_name {
+      margin: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .rooms__list {
+    grid-template-columns: 1fr;
+
+    .room__card {
+      grid-template-rows: 150px;
+    }
+
+    .room__card_cost {
+      align-items: flex-start;
+      flex-wrap: wrap;
+      margin-right: 0;
+      margin-bottom: 0;
+
+      div {
+        p {
+          text-align: start;
+        }
+      }
+    }
+  }
+}

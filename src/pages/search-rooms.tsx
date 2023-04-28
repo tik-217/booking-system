@@ -2,12 +2,23 @@ import Head from "next/head";
 import Image from "next/image";
 
 import HeaderTop from "@/components/HeaderTop";
-import styles from "../styles/SearchRooms.module.scss";
-import Sidebar from "@/components/prarts/SearchRooms/Sidebar";
+import styles from "@/styles/SearchRooms.module.scss";
+import Sidebar from "@/components/parts/SearchRooms/Sidebar";
 import { Noto_Serif } from "next/font/google";
 import Link from "next/link";
 
-import image1 from "../../public/img/theatre-jpg.jpg";
+import image1 from "@/assets/img/theatre-jpg.jpg";
+
+import arrowBlue from "@/assets/icons/arrow-blue.svg";
+import sircle from "@/assets/icons/sircle.svg";
+import star from "@/assets/icons/star.svg";
+import wifi from "@/assets/icons/wifi.svg";
+import parking from "@/assets/icons/parking.svg";
+import car from "@/assets/icons/car.svg";
+import cold from "@/assets/icons/cold.svg";
+import waves from "@/assets/icons/waves.svg";
+import fitness from "@/assets/icons/fitness.svg";
+import spa from "@/assets/icons/spa.svg";
 
 const noto_serif = Noto_Serif({
   subsets: ["cyrillic"],
@@ -33,7 +44,7 @@ export default function SearchRooms() {
               <Image
                 height={10}
                 width={10}
-                src={"/icons/arrow-blue.svg"}
+                src={arrowBlue}
                 alt="arrow to the right"
               />
             </li>
@@ -44,111 +55,77 @@ export default function SearchRooms() {
           <div className={styles.rooms__list}>
             <div className={styles.room__card}>
               <div className={styles.room__card_image}>
-                <Image
-                  src={image1}
-                  quality={100}
-                  fill
-                  priority
-                  alt={"room image"}
-                />
                 <div className={styles.room__card_rewiew}>8.6</div>
+                <div className={styles.room__image_list}>
+                  <div>
+                    <Image
+                      src={image1}
+                      quality={100}
+                      fill
+                      priority
+                      alt={"room image"}
+                      sizes="(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              33vw"
+                    />
+                  </div>{" "}
+                  <div>
+                    <Image
+                      src={image1}
+                      quality={100}
+                      fill
+                      priority
+                      alt={"room image"}
+                      sizes="(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              33vw"
+                    />
+                  </div>{" "}
+                  <div>
+                    <Image
+                      src={image1}
+                      quality={100}
+                      fill
+                      priority
+                      alt={"room image"}
+                      sizes="(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              33vw"
+                    />
+                  </div>
+                </div>
               </div>
               <div className={styles.room__card_title}>
                 <h3>Ti amore</h3>
                 <div>
-                  <Image
-                    height={15}
-                    width={15}
-                    src={"/icons/star.svg"}
-                    alt={"star"}
-                  />
-                  <Image
-                    height={15}
-                    width={15}
-                    src={"/icons/star.svg"}
-                    alt={"star"}
-                  />
-                  <Image
-                    height={15}
-                    width={15}
-                    src={"/icons/star.svg"}
-                    alt={"star"}
-                  />
-                  <Image
-                    height={15}
-                    width={15}
-                    src={"/icons/star.svg"}
-                    alt={"star"}
-                  />
-                  <Image
-                    height={15}
-                    width={15}
-                    src={"/icons/star.svg"}
-                    alt={"star"}
-                  />
+                  <Image height={15} width={15} src={star} alt={"star"} />
+                  <Image height={15} width={15} src={star} alt={"star"} />
+                  <Image height={15} width={15} src={star} alt={"star"} />
+                  <Image height={15} width={15} src={star} alt={"star"} />
+                  <Image height={15} width={15} src={star} alt={"star"} />
                 </div>
               </div>
               <div className={styles.room__card_name}>
                 <h4>Двухместный номер Стандарт</h4>
                 <div>
                   <p>Две кровати</p>
-                  <Image
-                    height={6}
-                    width={6}
-                    src={"/icons/sircle.svg"}
-                    alt="sircle"
-                  />
+                  <Image height={6} width={6} src={sircle} alt="sircle" />
                   <p>Одна комната</p>
                 </div>
               </div>
               <div className={styles.room__card_btn}>
-                <Link href={"/"}>
+                <Link href={"/active-room"}>
                   <button>Подробнее</button>
                 </Link>
               </div>
               <div className={styles.room__card_icons}>
-                <Image
-                  height={30}
-                  width={30}
-                  src={"/icons/wifi.svg"}
-                  alt="wifi"
-                />
-                <Image
-                  height={30}
-                  width={30}
-                  src={"/icons/parking.svg"}
-                  alt="parking"
-                />
-                <Image
-                  height={30}
-                  width={30}
-                  src={"/icons/car.svg"}
-                  alt="car"
-                />
-                <Image
-                  height={30}
-                  width={30}
-                  src={"/icons/cold.svg"}
-                  alt="cold"
-                />
-                <Image
-                  height={30}
-                  width={30}
-                  src={"/icons/waves.svg"}
-                  alt="waves"
-                />
-                <Image
-                  height={30}
-                  width={30}
-                  src={"/icons/fitness.svg"}
-                  alt="fitness"
-                />
-                <Image
-                  height={30}
-                  width={30}
-                  src={"/icons/spa.svg"}
-                  alt="spa"
-                />
+                <Image height={30} width={30} src={wifi} alt="wifi" />
+                <Image height={30} width={30} src={parking} alt="parking" />
+                <Image height={30} width={30} src={car} alt="car" />
+                <Image height={30} width={30} src={cold} alt="cold" />
+                <Image height={30} width={30} src={waves} alt="waves" />
+                <Image height={30} width={30} src={fitness} alt="fitness" />
+                <Image height={30} width={30} src={spa} alt="spa" />
               </div>
               <div className={styles.room__card_services}>
                 <div>
@@ -224,105 +201,43 @@ export default function SearchRooms() {
                   fill
                   priority
                   alt={"room image"}
+                  sizes="(max-width: 768px) 100vw,
+                  (max-width: 1200px) 50vw,
+                  33vw"
                 />
                 <div className={styles.room__card_rewiew}>8.6</div>
               </div>
               <div className={styles.room__card_title}>
                 <h3>Ti amore</h3>
                 <div>
-                  <Image
-                    height={15}
-                    width={15}
-                    src={"/icons/star.svg"}
-                    alt={"star"}
-                  />
-                  <Image
-                    height={15}
-                    width={15}
-                    src={"/icons/star.svg"}
-                    alt={"star"}
-                  />
-                  <Image
-                    height={15}
-                    width={15}
-                    src={"/icons/star.svg"}
-                    alt={"star"}
-                  />
-                  <Image
-                    height={15}
-                    width={15}
-                    src={"/icons/star.svg"}
-                    alt={"star"}
-                  />
-                  <Image
-                    height={15}
-                    width={15}
-                    src={"/icons/star.svg"}
-                    alt={"star"}
-                  />
+                  <Image height={15} width={15} src={star} alt={"star"} />
+                  <Image height={15} width={15} src={star} alt={"star"} />
+                  <Image height={15} width={15} src={star} alt={"star"} />
+                  <Image height={15} width={15} src={star} alt={"star"} />
+                  <Image height={15} width={15} src={star} alt={"star"} />
                 </div>
               </div>
               <div className={styles.room__card_name}>
                 <h4>Двухместный номер Стандарт</h4>
                 <div>
                   <p>Две кровати</p>
-                  <Image
-                    height={6}
-                    width={6}
-                    src={"/icons/sircle.svg"}
-                    alt="sircle"
-                  />
+                  <Image height={6} width={6} src={sircle} alt="sircle" />
                   <p>Одна комната</p>
                 </div>
               </div>
               <div className={styles.room__card_btn}>
-                <Link href={"/"}>
+                <Link href={"/active-room"}>
                   <button>Подробнее</button>
                 </Link>
               </div>
               <div className={styles.room__card_icons}>
-                <Image
-                  height={30}
-                  width={30}
-                  src={"/icons/wifi.svg"}
-                  alt="wifi"
-                />
-                <Image
-                  height={30}
-                  width={30}
-                  src={"/icons/parking.svg"}
-                  alt="parking"
-                />
-                <Image
-                  height={30}
-                  width={30}
-                  src={"/icons/car.svg"}
-                  alt="car"
-                />
-                <Image
-                  height={30}
-                  width={30}
-                  src={"/icons/cold.svg"}
-                  alt="cold"
-                />
-                <Image
-                  height={30}
-                  width={30}
-                  src={"/icons/waves.svg"}
-                  alt="waves"
-                />
-                <Image
-                  height={30}
-                  width={30}
-                  src={"/icons/fitness.svg"}
-                  alt="fitness"
-                />
-                <Image
-                  height={30}
-                  width={30}
-                  src={"/icons/spa.svg"}
-                  alt="spa"
-                />
+                <Image height={30} width={30} src={wifi} alt="wifi" />
+                <Image height={30} width={30} src={parking} alt="parking" />
+                <Image height={30} width={30} src={car} alt="car" />
+                <Image height={30} width={30} src={cold} alt="cold" />
+                <Image height={30} width={30} src={waves} alt="waves" />
+                <Image height={30} width={30} src={fitness} alt="fitness" />
+                <Image height={30} width={30} src={spa} alt="spa" />
               </div>
               <div className={styles.room__card_services}>
                 <div>
@@ -398,105 +313,43 @@ export default function SearchRooms() {
                   fill
                   priority
                   alt={"room image"}
+                  sizes="(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              33vw"
                 />
                 <div className={styles.room__card_rewiew}>8.6</div>
               </div>
               <div className={styles.room__card_title}>
                 <h3>Ti amore</h3>
                 <div>
-                  <Image
-                    height={15}
-                    width={15}
-                    src={"/icons/star.svg"}
-                    alt={"star"}
-                  />
-                  <Image
-                    height={15}
-                    width={15}
-                    src={"/icons/star.svg"}
-                    alt={"star"}
-                  />
-                  <Image
-                    height={15}
-                    width={15}
-                    src={"/icons/star.svg"}
-                    alt={"star"}
-                  />
-                  <Image
-                    height={15}
-                    width={15}
-                    src={"/icons/star.svg"}
-                    alt={"star"}
-                  />
-                  <Image
-                    height={15}
-                    width={15}
-                    src={"/icons/star.svg"}
-                    alt={"star"}
-                  />
+                  <Image height={15} width={15} src={star} alt={"star"} />
+                  <Image height={15} width={15} src={star} alt={"star"} />
+                  <Image height={15} width={15} src={star} alt={"star"} />
+                  <Image height={15} width={15} src={star} alt={"star"} />
+                  <Image height={15} width={15} src={star} alt={"star"} />
                 </div>
               </div>
               <div className={styles.room__card_name}>
                 <h4>Двухместный номер Стандарт</h4>
                 <div>
                   <p>Две кровати</p>
-                  <Image
-                    height={6}
-                    width={6}
-                    src={"/icons/sircle.svg"}
-                    alt="sircle"
-                  />
+                  <Image height={6} width={6} src={sircle} alt="sircle" />
                   <p>Одна комната</p>
                 </div>
               </div>
               <div className={styles.room__card_btn}>
-                <Link href={"/"}>
+                <Link href={"/active-room"}>
                   <button>Подробнее</button>
                 </Link>
               </div>
               <div className={styles.room__card_icons}>
-                <Image
-                  height={30}
-                  width={30}
-                  src={"/icons/wifi.svg"}
-                  alt="wifi"
-                />
-                <Image
-                  height={30}
-                  width={30}
-                  src={"/icons/parking.svg"}
-                  alt="parking"
-                />
-                <Image
-                  height={30}
-                  width={30}
-                  src={"/icons/car.svg"}
-                  alt="car"
-                />
-                <Image
-                  height={30}
-                  width={30}
-                  src={"/icons/cold.svg"}
-                  alt="cold"
-                />
-                <Image
-                  height={30}
-                  width={30}
-                  src={"/icons/waves.svg"}
-                  alt="waves"
-                />
-                <Image
-                  height={30}
-                  width={30}
-                  src={"/icons/fitness.svg"}
-                  alt="fitness"
-                />
-                <Image
-                  height={30}
-                  width={30}
-                  src={"/icons/spa.svg"}
-                  alt="spa"
-                />
+                <Image height={30} width={30} src={wifi} alt="wifi" />
+                <Image height={30} width={30} src={parking} alt="parking" />
+                <Image height={30} width={30} src={car} alt="car" />
+                <Image height={30} width={30} src={cold} alt="cold" />
+                <Image height={30} width={30} src={waves} alt="waves" />
+                <Image height={30} width={30} src={fitness} alt="fitness" />
+                <Image height={30} width={30} src={spa} alt="spa" />
               </div>
               <div className={styles.room__card_services}>
                 <div>

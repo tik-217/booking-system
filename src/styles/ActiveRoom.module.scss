@@ -1,0 +1,798 @@
+@import "./generalStyles/varriable.scss";
+
+.content > div {
+  margin-bottom: 20px;
+}
+
+.activeRoom {
+  margin-top: 30px;
+
+  & > div {
+    background: #fff;
+    margin-bottom: 30px;
+    padding-left: $default-margin-lr;
+    padding-right: $default-margin-lr;
+  }
+
+  & > div > h4 {
+    padding: 20px 0;
+    font-size: $big-title-size;
+  }
+}
+
+.rooms__list {
+  margin-bottom: 70px;
+}
+
+.front__card {
+  width: 100%;
+  background: #fff;
+  padding: 30px 0px;
+  border-radius: 10px;
+  display: grid;
+  grid-template-rows: 200px;
+  grid-template-areas:
+    "front_image front_image front_image"
+    "front_title front_proximity front_like";
+  justify-items: stretch;
+  align-items: center;
+  box-sizing: border-box;
+  gap: 25px;
+  margin-bottom: 20px;
+
+  .front__card_image {
+    position: relative;
+    grid-area: front_image;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+
+    .front__card_rewiew {
+      position: absolute;
+      top: 0;
+      left: 20px;
+      background: $font-active;
+      padding: 8px 6px;
+      color: #fff;
+      border-bottom-left-radius: 8px;
+      border-bottom-right-radius: 8px;
+      z-index: 2;
+    }
+
+    .front__image_list {
+      display: flex;
+      height: inherit;
+      overflow: auto;
+      overflow-y: hidden;
+      width: 100%;
+      height: 100%;
+
+      & > div {
+        width: 300px;
+        margin-right: 10px;
+        height: inherit;
+
+        &:last-child {
+          margin-right: 0;
+        }
+
+        img {
+          position: relative !important;
+          height: 300px;
+          width: inherit;
+        }
+      }
+    }
+
+    img {
+      height: inherit !important;
+      width: auto !important;
+      left: 50% !important;
+      top: 50% !important;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  .front__card_title {
+    grid-area: front_title;
+    align-self: baseline;
+
+    h3 {
+      font-size: $small-title-size;
+      font-weight: 400;
+    }
+  }
+
+  .front__card_byProximity {
+    grid-area: front_proximity;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    flex-wrap: wrap;
+
+    h5 {
+      margin-bottom: 10px;
+      font-size: $small-title-size;
+    }
+
+    & > div {
+      & > div {
+        display: flex;
+
+        p {
+          color: #378e64;
+          font-size: $small-text-size;
+        }
+
+        svg {
+          margin-right: 5px;
+          color: #378e64;
+          height: 17px;
+          width: 17px;
+          fill: #378e64;
+        }
+      }
+    }
+
+    img {
+      margin-right: 10px;
+      margin-bottom: 8px;
+      margin-left: 10px;
+    }
+  }
+
+  .front__card_like {
+    grid-area: front_like;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    height: 100%;
+  }
+}
+
+.room__card {
+  width: 100%;
+  background: #fff;
+  padding: 30px 0px;
+  border-radius: 10px;
+  display: grid;
+  grid-template-rows: 200px;
+  grid-template-areas:
+    "image image image"
+    "title name icons"
+    "services btn cost";
+  justify-items: stretch;
+  align-items: center;
+  box-sizing: border-box;
+  gap: 25px;
+  margin-bottom: 20px;
+
+  .room__card_image {
+    position: relative;
+    grid-area: image;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+
+    .room__card_rewiew {
+      position: absolute;
+      top: 0;
+      left: 20px;
+      background: $font-active;
+      padding: 8px 6px;
+      color: #fff;
+      border-bottom-left-radius: 8px;
+      border-bottom-right-radius: 8px;
+      z-index: 2;
+    }
+
+    .room__image_list {
+      display: flex;
+      height: inherit;
+      overflow: auto;
+      overflow-y: hidden;
+      width: 100%;
+      height: 100%;
+
+      & > div {
+        width: 300px;
+        margin-right: 10px;
+        height: inherit;
+
+        &:last-child {
+          margin-right: 0;
+        }
+
+        img {
+          position: relative !important;
+          height: 300px;
+          width: inherit;
+        }
+      }
+    }
+
+    img {
+      height: inherit !important;
+      width: auto !important;
+      left: 50% !important;
+      top: 50% !important;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  .room__card_title {
+    grid-area: title;
+    align-self: baseline;
+
+    h3 {
+      font-size: $small-title-size;
+      font-weight: 400;
+    }
+  }
+
+  .room__card_name {
+    grid-area: name;
+    align-self: baseline;
+
+    h4 {
+      font-size: $small-title-size;
+      text-align: start;
+    }
+
+    & > div {
+      display: flex;
+      align-items: center;
+      margin-top: 8px;
+
+      p {
+        font-size: $small-text-size;
+      }
+
+      img {
+        margin: 0 4px;
+      }
+    }
+  }
+
+  .room__card_btn {
+    grid-area: btn;
+    align-self: baseline;
+
+    button {
+      padding: 10px 20px;
+      outline: none;
+      border: none;
+      color: white;
+      border-radius: 8px;
+      background: $font-color;
+      transition: all 0.3s ease-in-out;
+      cursor: pointer;
+
+      &:hover {
+        background: $font-link;
+      }
+    }
+  }
+
+  .room__card_icons {
+    grid-area: icons;
+
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+
+    img {
+      margin-right: 10px;
+      margin-bottom: 8px;
+      margin-left: 10px;
+    }
+  }
+
+  .room__card_services {
+    grid-area: services;
+    display: flex;
+    justify-content: flex-start;
+
+    & > div {
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+      margin-bottom: 5px;
+      flex-wrap: wrap;
+      max-width: 260px;
+
+      div {
+        display: flex;
+        justify-content: center;
+      }
+
+      p {
+        font-size: $small-text-size;
+        color: $font-active;
+      }
+
+      svg {
+        margin-right: 5px;
+        color: $font-active;
+        height: 17px;
+        width: 17px;
+        fill: $font-active;
+      }
+    }
+  }
+
+  .room__card_cost {
+    grid-area: cost;
+    display: flex;
+    justify-content: flex-end;
+    align-self: baseline;
+
+    div:first-child {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      margin-right: 20px;
+
+      p {
+        font-size: $middle-title-size;
+        font-weight: 600;
+      }
+
+      span {
+        line-height: 50%;
+      }
+    }
+
+    div:last-child {
+      p {
+        width: 95px;
+        color: $font-link;
+      }
+    }
+  }
+
+  .room__card_btnMore {
+    p {
+      cursor: pointer;
+      color: $font-link;
+      user-select: none;
+      text-decoration: underline;
+    }
+  }
+}
+
+.meta {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+
+.card__descriptions {
+  display: flex;
+  flex-direction: column;
+  flex: 3;
+  margin-right: 30px;
+
+  h4 {
+    margin-bottom: 20px;
+    font-size: $middle-title-size;
+  }
+
+  .hotelRules {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+
+    .hotelRules__meta {
+      display: flex;
+
+      h5,
+      span {
+        color: #000;
+      }
+
+      span {
+        font-size: $small-text-size;
+        margin-left: 24px;
+        display: block;
+        margin-top: 5px;
+      }
+
+      img {
+        margin-right: 10px;
+      }
+
+      div {
+        margin-right: 30px;
+
+        div {
+          display: flex;
+          align-items: center;
+        }
+      }
+
+      & > div:first-child {
+        margin-bottom: 10px;
+
+        div {
+          flex: 2;
+          min-width: 170px;
+        }
+      }
+
+      & > div:last-child {
+        div {
+          flex: 3;
+        }
+      }
+    }
+  }
+
+  .descrip {
+    h5,
+    p {
+      color: #000;
+    }
+
+    p {
+      margin-bottom: 10px;
+      font-size: $small-text-size;
+    }
+  }
+}
+
+.card__services {
+  flex: 2;
+
+  h4 {
+    margin-bottom: 20px;
+    font-size: $middle-title-size;
+  }
+
+  h5 {
+    width: max-content;
+  }
+
+  h5,
+  li {
+    color: #000;
+  }
+
+  .card__services_list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    & > div {
+      margin-right: 20px;
+
+      & > div {
+        display: flex;
+        align-items: center;
+        margin-bottom: 5px;
+
+        img {
+          margin-right: 10px;
+        }
+      }
+    }
+
+    ul {
+      list-style: none;
+      margin-left: 25px;
+      margin-bottom: 25px;
+
+      li {
+        margin-bottom: 3px;
+        font-size: $small-text-size;
+      }
+    }
+  }
+}
+
+.changeDate {
+  background: url("../assets/img/beautiful-shot-of-a-large-brown-bear-sitting-on-a-rock-in-a-forest.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+
+  .changeDate__booking {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    & > div {
+      width: 100%;
+    }
+
+    .changeDate__booking_form {
+      display: grid;
+      grid-template-areas: "calendar guests children btn";
+      gap: 10px;
+      background: rgb(255 255 255 / 76%);
+      border-radius: 15px;
+      padding: 32px 0;
+      width: 100%;
+      box-sizing: border-box;
+      align-items: normal;
+    }
+
+    .changeDate__booking_form button {
+      background: $font-color;
+      outline: none;
+      color: white;
+      box-shadow: none;
+      border: none;
+      outline: none;
+      border-radius: 10px;
+      transition: all 0.2s ease-in-out;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $font-link-active;
+      }
+    }
+
+    .changeDate__booking_calendar {
+      border-radius: 10px;
+      grid-area: calendar;
+    }
+
+    .changeDate__booking_guests {
+      grid-area: guests;
+      border-radius: 10px;
+      border: 1px solid #d9d9d9;
+    }
+
+    .changeDate__booking_children {
+      grid-area: children;
+      border-radius: 10px;
+      border: 1px solid #d9d9d9;
+    }
+
+    .changeDate__booking_btn {
+      grid-area: btn;
+    }
+
+    .changeDate__booking_form {
+      input {
+        outline: none;
+        padding: 0 15px;
+        border: none;
+        border-radius: 10px;
+        transition: all 0.2s ease-in-out;
+
+        &[type="number"] {
+          height: 100%;
+          width: 100%;
+          box-sizing: border-box;
+        }
+      }
+    }
+  }
+}
+
+.comments {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 40px 0;
+
+  .comments__wrapper > div {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row;
+    border-bottom: 1px solid $font-grey;
+    max-width: 1000px;
+    margin-bottom: 40px;
+
+    h5 {
+      margin-bottom: 5px;
+      font-size: $small-title-size;
+      color: #000;
+    }
+
+    .comments__meta {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-bottom: 30px;
+      margin-right: 30px;
+      flex: 1;
+
+      a {
+        text-decoration: none;
+      }
+
+      span {
+        color: $font-grey;
+        font-size: $small-text-size;
+        margin-left: 5px;
+      }
+    }
+
+    .comments_rewiew {
+      margin-top: 10px;
+      background: #378e64;
+      padding: 8px 6px;
+      color: #fff;
+      border-radius: 8px;
+      min-width: 25px;
+      text-align: center;
+    }
+
+    .comments__text {
+      flex: 3;
+
+      div {
+        margin-bottom: 25px;
+      }
+
+      p {
+        color: #000;
+        font-size: $small-text-size;
+      }
+    }
+
+    &:last-child {
+      border: none;
+      margin-bottom: 0;
+    }
+  }
+
+  & > p {
+    text-transform: capitalize;
+    font-weight: 600;
+    color: $font-link;
+    cursor: pointer;
+    margin-top: 40px;
+    text-decoration: underline;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .changeDate__booking .changeDate__booking_calendar {
+    flex: 3;
+  }
+
+  .changeDate .changeDate__booking_form {
+    padding: 20px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .changeDate .changeDate__booking .changeDate__booking_form {
+    grid-template-areas:
+      "calendar guests children"
+      "btn btn btn";
+  }
+
+  .changeDate__booking_btn {
+    padding: 10px 15px;
+  }
+
+  .hotelRules__meta {
+    flex-wrap: wrap;
+  }
+
+  .siteLayout {
+    font-size: 14px;
+
+    .room__card {
+      padding: 0;
+
+      .room__card_title {
+        margin-top: 20px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .changeDate .changeDate__booking .changeDate__booking_form {
+    grid-template-areas:
+      "calendar calendar"
+      "guests children"
+      "btn btn";
+  }
+
+  .activeRoom .changeDate .changeDate__booking_guests,
+  .activeRoom .changeDate .changeDate__booking_children {
+    input {
+      padding: 10px 15px;
+    }
+  }
+
+  .comments .comments__wrapper > div {
+    flex-direction: column;
+  }
+
+  .meta {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .descrip {
+    margin-bottom: 20px;
+  }
+
+  .room__card {
+    grid-template-areas:
+      "image image"
+      "title icons"
+      "services cost"
+      "name name"
+      "btn btn";
+
+    .room__card_name {
+      font-size: 1em;
+    }
+
+    .room__card_icons {
+      justify-content: flex-end;
+    }
+
+    .room__card_cost {
+      flex-wrap: wrap;
+      margin-left: 20px;
+      flex-direction: column;
+
+      div:first-child {
+        margin-right: 0;
+        margin-bottom: 10px;
+      }
+
+      div:last-child {
+        text-align: end;
+        align-self: flex-end;
+      }
+    }
+
+    .room__card_btn {
+      justify-self: flex-start;
+      align-self: flex-end;
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .changeDate__topWrapper {
+    padding-left: $mobile-margin-lr;
+    padding-right: $mobile-margin-lr;
+  }
+
+  .card__services .card__services_list {
+    grid-template-columns: 1fr;
+  }
+
+  .changeDate .changeDate__booking_title {
+    padding: 15px;
+    margin-bottom: 10px;
+
+    h3 {
+      width: 160px;
+      font-size: $middle-title-size;
+    }
+
+    h5 {
+      font-size: $small-text-size;
+    }
+  }
+
+  .front__card {
+    grid-template-areas:
+      "front_image front_image"
+      "front_title front_like"
+      "front_proximity front_proximity";
+  }
+
+  .room__card {
+    grid-template-rows: 150px;
+    column-gap: 20px;
+  }
+}

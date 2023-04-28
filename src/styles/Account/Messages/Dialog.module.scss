@@ -1,0 +1,156 @@
+@import "../../generalStyles/varriable.scss";
+@import "../General.scss";
+
+.content {
+  & > div {
+    padding: 25px 24px;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.dialog {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 900px;
+  width: 100%;
+
+  .dialog__backBtn {
+    margin-bottom: 30px;
+
+    img {
+      margin-right: 3px;
+    }
+
+    a {
+      margin-bottom: 20px;
+      text-decoration: underline;
+    }
+  }
+
+  .dialog__meta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 15px;
+
+    h5 {
+      margin-bottom: 5px;
+    }
+
+    span {
+      color: $font-grey;
+      font-size: $small-text-size;
+      margin-left: 5px;
+    }
+  }
+
+  .dialog__messages {
+    width: 100%;
+
+    .messages {
+      position: relative;
+      height: 45vh;
+      overflow: auto;
+      display: flex;
+      flex-direction: column-reverse;
+
+      & > div {
+        display: flex;
+        flex-direction: column;
+        margin-top: 10px;
+        width: 100%;
+        overflow: hidden;
+        position: absolute;
+
+        & > div {
+          margin-bottom: 15px;
+        }
+      }
+
+      .messages__left {
+        margin-right: 60px;
+
+        p {
+          background: $font-grey;
+          width: fit-content;
+        }
+      }
+
+      .messages__right {
+        align-self: flex-end;
+        margin-left: 60px;
+      }
+
+      p {
+        font-size: $small-text-size;
+        padding: 12px 15px;
+        color: #fff;
+        text-align: start;
+        background: $font-link;
+        max-width: 350px;
+        border-radius: 10px;
+      }
+    }
+
+    .messageSending {
+      display: flex;
+      margin-top: 10px;
+
+      textarea {
+        flex: 4;
+        padding: 15px 25px;
+        margin-right: 10px;
+        border-radius: 10px;
+        font-size: $small-text-size;
+        background: $font-link-light;
+        outline: none;
+        border: none;
+        min-height: 50px;
+        height: auto;
+        resize: none;
+        color: $font-text;
+
+        &::placeholder {
+          display: flex;
+          align-items: center;
+          color: #fff;
+        }
+      }
+
+      button {
+        flex: 1;
+        background: $font-color;
+        padding: 15px 20px;
+        color: #fff;
+        border-radius: 10px;
+        font-size: $small-text-size;
+        border: none;
+        height: fit-content;
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+
+        &:hover {
+          opacity: 0.9;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .content {
+    .dialog__messages {
+      .messageSending {
+        flex-wrap: wrap;
+
+        textarea {
+          flex-basis: 100%;
+          margin-right: 0;
+          margin-bottom: 5px;
+        }
+      }
+    }
+  }
+}

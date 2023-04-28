@@ -1,0 +1,57 @@
+@import "../../generalStyles/varriable.scss";
+@import "../General.scss";
+
+.content {
+  & > div {
+    padding: 25px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+
+    h4 {
+      text-align: start;
+      font-size: $middle-title-size;
+      margin-bottom: 30px;
+      color: #000;
+      max-width: 900px;
+      width: 100%;
+    }
+  }
+}
+
+.messages {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  padding-bottom: 15px;
+  border-bottom: 1px solid $font-grey;
+  margin-bottom: 25px;
+  max-width: 900px;
+
+  h5 {
+    margin-bottom: 5px;
+    font-size: $small-title-size;
+    color: #000;
+  }
+
+  .messages__meta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 15px;
+
+    span {
+      color: $font-grey;
+      font-size: $small-text-size;
+      margin-left: 5px;
+    }
+  }
+
+  .messages__lastMsg {
+    p {
+      text-align: start;
+      color: #000;
+    }
+  }
+}

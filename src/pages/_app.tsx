@@ -1,35 +1,42 @@
-import "@/styles/globals.scss";
-import { Lora, Merriweather, Noto_Serif } from "next/font/google";
+// react/next
 import type { AppProps } from "next/app";
+import Head from "next/head";
+
+// styles
+import "@/styles/generalStyles/globals.scss";
+import { Roboto_Slab } from "next/font/google";
+
+// antd
 import arm from "antd/locale/ru_RU";
 import "dayjs/locale/ru";
 import { ConfigProvider } from "antd";
+
+// store
 import { Provider } from "react-redux";
 import { store } from "@/store/store";
 
-const lora = Lora({ subsets: ["cyrillic"] });
-const merriweather = Merriweather({
+// fonts
+const robotoSlab = Roboto_Slab({
   subsets: ["cyrillic"],
-  weight: ["300", "400"],
-});
-const noto_serif = Noto_Serif({
-  subsets: ["cyrillic"],
-  weight: ["400", "700"],
-  variable: "--noto_serif",
+  weight: ["100", "300", "400", "500", "700"],
 });
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    // <div className={lora.className}>
-    // <div className={merriweather.className}>
-    <Provider store={store}>
-      <div
-        className={`${noto_serif.className} ${merriweather.className} ${lora.className}`}
-      >
-        <ConfigProvider locale={arm}>
-          <Component {...pageProps} />
-        </ConfigProvider>
-      </div>
-    </Provider>
+    <>
+      <Head>
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, minimum-scale=0.5"
+        />
+      </Head>
+      <Provider store={store}>
+        <div className={`${robotoSlab.className} `}>
+          <ConfigProvider locale={arm}>
+            <Component {...pageProps} />
+          </ConfigProvider>
+        </div>
+      </Provider>
+    </>
   );
 }

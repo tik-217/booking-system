@@ -1,8 +1,8 @@
-@import "./varriable.scss";
+@import "./generalStyles/varriable.scss";
 
 .header {
-  background: url("/img/datingscout-jEefk3YwWZ0-unsplash.jpg");
-  height: 700px;
+  background: url("../assets/img/beautiful-shot-of-a-large-brown-bear-sitting-on-a-rock-in-a-forest.jpg");
+  height: 550px;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -20,7 +20,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1360px;
+    max-width: $max-width;
     margin-right: auto;
     margin-left: auto;
   }
@@ -81,10 +81,10 @@
     margin-bottom: 0;
 
     a {
-      color: #26497e;
+      color: $font-text;
       margin-left: 10px;
       text-decoration: none;
-      font-weight: 500;
+      font-weight: 400;
       transition: all 0.15s ease-in-out;
     }
 
@@ -109,24 +109,20 @@
 
   & > div {
     width: 100%;
-    max-width: 1360px;
+    max-width: $max-width;
     margin: 0 auto;
   }
 
   .header__booking_title {
-    background: rgb(255 255 255 / 76%);
-    padding: 20px 30px;
+    // background: rgb(255 255 255 / 76%);
+    // padding: 15px 25px;
     width: fit-content;
     border-radius: 10px;
     margin-bottom: 30px;
 
     h3 {
+      color: #fff;
       font-size: $very-big-title-size;
-    }
-
-    h5 {
-      font-size: $small-title-size;
-      font-weight: 200;
     }
   }
 
@@ -224,26 +220,27 @@
 // main
 
 .main {
-  max-width: 1360px;
-  margin: 0 auto;
+  max-width: $max-width;
+  margin: 0 auto 80px;
 }
 
 // main__popularDirections
 
 .main__popularDirections {
-  margin: 100px 8% 0;
+  margin: $default-margin;
 
   h4 {
     font-size: $big-title-size;
     text-align: center;
+    color: $font-text;
   }
 }
 
 .popularDirections__elements {
-  margin-top: 120px;
+  margin-top: 80px;
   display: grid;
   grid-auto-flow: column;
-  gap: 110px 10px;
+  gap: 90px 10px;
   justify-content: space-between;
   grid-template-rows: repeat(2, 1fr);
 }
@@ -251,16 +248,17 @@
 .popularDirections__elements > div {
   display: flex;
   flex-direction: column;
+  position: relative;
   align-items: center;
-  filter: drop-shadow(0px 0px 30px rgba(0, 0, 0, 0.3));
+  filter: drop-shadow(0px 0px 30px rgba(156, 156, 156, 0.3));
   user-select: none;
   cursor: pointer;
 }
 
 .popularDirections__elements_image {
-  height: 200px;
+  height: 170px;
   width: 26vw;
-  max-width: 360px;
+  max-width: 300px;
   overflow: hidden;
   position: relative;
   border-radius: 10px;
@@ -286,15 +284,16 @@
   font-weight: 600;
   position: absolute;
   z-index: 1;
-  top: -40px;
-  font-size: $very-big-title-size;
-  background: linear-gradient(180deg, #26497e 0%, rgba(38, 73, 126, 0) 100%);
+  top: -30px;
+  font-size: $middle-title-size;
+  background: linear-gradient(180deg, $font-text 0%, rgba(38, 73, 126, 0) 100%);
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  color: $font-text;
 }
 
 .popularDirections__elements span {
-  background: linear-gradient(180deg, rgba(38, 73, 126, 0) 0%, #26497e 100%);
+  background: linear-gradient(180deg, rgba(38, 73, 126, 0) 0%, $font-text 100%);
   -webkit-text-fill-color: transparent;
   background-clip: text;
   position: absolute;
@@ -305,11 +304,13 @@
 // main__topHotels
 
 .main__topHotels {
-  margin: 120px 8% 0;
+  margin: $default-margin;
+  margin-top: 110px;
 
   h4 {
     font-size: $big-title-size;
     text-align: center;
+    color: $font-text;
   }
 }
 
@@ -318,55 +319,84 @@
   grid-template-columns: repeat(5, 1fr);
   gap: 60px 30px;
   justify-content: space-between;
-  margin-top: 80px;
-}
+  margin-top: 50px;
 
-.hotelCard {
-  .hotelCard__imgWrapper {
-    position: relative;
-    overflow: hidden;
-    height: 130px;
-    width: 100%;
-    border-radius: 10px;
-
-    img {
-      position: absolute;
-      top: 50% !important;
-      left: 50% !important;
-      right: 0;
-      height: 130% !important;
-      width: auto !important;
-      bottom: 0;
-      transform: translate(-50%, -50%);
+  .hotelCard {
+    .hotelCard__imgWrapper {
+      position: relative;
+      overflow: hidden;
+      height: 150px;
+      width: 100%;
       border-radius: 10px;
+
+      img {
+        position: absolute;
+        top: 50% !important;
+        left: 50% !important;
+        right: 0;
+        height: 120% !important;
+        width: auto !important;
+        bottom: 0;
+        transform: translate(-50%, -50%);
+        border-radius: 10px;
+      }
+    }
+
+    .hotelCard__description {
+      display: flex;
+      flex-direction: column;
+
+      h6 {
+        margin-top: 5px;
+        color: $font-text;
+      }
+
+      p {
+        margin-bottom: 10px;
+        font-size: $small-text-size;
+        color: $font-text;
+      }
+
+      span {
+        margin-bottom: 5px;
+        color: $font-text;
+      }
+
+      .hotelCard__rewiew {
+        background: #378e64;
+        padding: 5px;
+        display: inline;
+        color: #fff;
+        border-radius: 5px;
+        width: min-content;
+        font-size: $small-text-size;
+      }
     }
   }
+}
 
-  .hotelCard__description {
-    display: flex;
-    flex-direction: column;
+.main__topHotels_btn {
+  width: 100%;
+  display: flex;
+  margin-top: 40px;
+  justify-content: center;
 
-    h6 {
-      margin-top: 5px;
-    }
+  button {
+    background: $font-color;
+    outline: none;
+    color: white;
+    box-shadow: none;
+    border: none;
+    outline: none;
+    font-size: $small-text-size;
+    border-radius: 10px;
+    padding: 10px 30px;
+    justify-content: center;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
 
-    p {
-      margin-bottom: 10px;
-      font-size: $small-text-size;
-    }
-
-    span {
-      margin-bottom: 5px;
-    }
-
-    .hotelCard__rewiew {
-      background: #378e64;
-      padding: 5px;
-      display: inline;
-      color: #fff;
-      border-radius: 5px;
-      width: min-content;
-      font-size: $small-text-size;
+    &:hover {
+      background: $font-color-active;
     }
   }
 }
@@ -379,10 +409,11 @@
   h4 {
     font-size: $big-title-size;
     text-align: center;
+    color: $font-text;
   }
 
   .main__travelersBlog_list {
-    margin-top: 80px;
+    margin-top: 40px;
     display: grid;
     gap: 40px 30px;
     grid-template-columns: repeat(4, 1fr);
@@ -426,7 +457,7 @@
       margin-top: 8px;
 
       .travelersBlog__description_date {
-        font-size: 0.8em;
+        font-size: $small-text-size;
         color: $font-link;
       }
 
@@ -457,9 +488,10 @@
     p {
       max-width: 300px;
       margin-top: 8px;
+      color: $font-text;
 
       strong {
-        color: #c37878;
+        color: $font-color;
         font-weight: 400;
       }
     }
@@ -469,14 +501,14 @@
 // footer
 
 .footer {
-  margin-top: 100px;
+  margin-top: 30px;
   padding: 50px 8%;
-  background-color: $font-link-light;
+  background-color: #b1a7a6a3;
   display: flex;
   flex-direction: column;
 
   & > div {
-    max-width: 1360px;
+    max-width: $max-width;
     margin: 0 auto;
     width: 100%;
   }
@@ -491,11 +523,13 @@
 
       li {
         margin-bottom: 3px;
+        color: $font-text;
       }
 
       li > a {
         text-decoration: none;
         transition: all 0.15s ease-in-out;
+        color: $font-text;
       }
 
       li > a:hover {
@@ -602,7 +636,7 @@
   }
 
   .popularDirections__elements h3 {
-    font-size: $big-title-size;
+    font-size: $middle-title-size;
     top: -28px;
   }
 
@@ -739,12 +773,8 @@
     margin-bottom: 10px;
 
     h3 {
-      width: 160px;
-      font-size: $middle-title-size;
-    }
-
-    h5 {
-      font-size: $small-text-size;
+      font-size: $big-title-size;
+      font-weight: 600;
     }
   }
 
@@ -763,11 +793,10 @@
   }
 
   .main__topHotels_list {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px 20px;
 
     .hotelCard {
-      padding: 0 30px;
-
       img {
         height: 180% !important;
       }
@@ -775,11 +804,31 @@
   }
 
   .main__travelersBlog .main__travelersBlog_list {
-    grid-template-columns: 1fr;
+    justify-items: center;
+    width: auto;
+    gap: 30px 20px;
   }
 
-  .main__travelersBlog_list {
-    justify-items: center;
-    width: 80vw;
+  .main__topHotels .hotelCard .hotelCard__imgWrapper {
+    height: 130px;
+  }
+
+  .travelersBlog .travelersBlog__imgWrapper {
+    height: 130px;
+  }
+
+  .travelersBlog .travelersBlog__description {
+    padding: 2px 0px;
+
+    .travelersBlog__description_meta {
+      div:first-child {
+        margin-right: 4px !important;
+      }
+
+      img {
+        width: 10px;
+        height: 10px;
+      }
+    }
   }
 }

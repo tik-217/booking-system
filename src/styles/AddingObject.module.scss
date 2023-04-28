@@ -1,4 +1,4 @@
-@import "./varriable.scss";
+@import "./generalStyles/varriable.scss";
 
 .header__topWrapper {
   display: flex;
@@ -22,6 +22,7 @@
     box-shadow: none;
     color: #fff;
     cursor: pointer;
+    transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
 
     &:hover {
@@ -254,7 +255,7 @@
           left: 50%;
           width: 30px;
           height: 30px;
-          background: url("/icons/plus.svg");
+          background: url("../assets/icons/plus.svg");
           background-repeat: no-repeat;
           transform: translate(-50%, -50%);
         }

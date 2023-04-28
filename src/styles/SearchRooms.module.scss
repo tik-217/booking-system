@@ -1,4 +1,4 @@
-@import "./varriable.scss";
+@import "./generalStyles/varriable.scss";
 
 .main {
   padding: $default-margin;
@@ -84,10 +84,12 @@
         font-weight: 600;
         text-align: center;
         margin-bottom: 15px;
+        color: $font-text;
       }
 
       span {
         font-size: 1em;
+        color: $font-text;
       }
 
       label {
@@ -121,6 +123,7 @@
 
     a {
       text-decoration: none;
+      color: $font-text;
     }
 
     &:nth-child(2n + 1):hover {
@@ -143,15 +146,15 @@
     border-radius: 10px;
     display: grid;
     grid-template-areas:
-      "image title icons"
-      "image name services"
-      "image btn cost";
-    grid-auto-columns: 4fr 5fr 5fr;
+      "image title name"
+      "image services icons"
+      ". btn cost";
+    grid-template-columns: 200px;
     justify-items: stretch;
     grid-auto-flow: column;
     align-items: center;
     box-sizing: border-box;
-    gap: 20px;
+    gap: 50px 20px;
     margin-bottom: 20px;
 
     .room__card_image {
@@ -171,6 +174,32 @@
         color: #fff;
         border-bottom-left-radius: 8px;
         border-bottom-right-radius: 8px;
+        z-index: 2;
+      }
+
+      .room__image_list {
+        display: flex;
+        height: inherit;
+        overflow: auto;
+        overflow-y: hidden;
+        width: 100%;
+        height: 100%;
+
+        & > div {
+          width: 300px;
+          margin-right: 10px;
+          height: inherit;
+
+          &:last-child {
+            margin-right: 0;
+          }
+
+          img {
+            position: relative !important;
+            height: 300px;
+            width: inherit;
+          }
+        }
       }
 
       img {
@@ -194,19 +223,23 @@
 
     .room__card_name {
       grid-area: name;
-      margin: 20px 0;
 
       h4 {
         font-size: $small-title-size;
+        text-align: end;
+        color: $font-text;
+        font-weight: 600;
       }
 
       & > div {
         display: flex;
         align-items: center;
+        justify-content: flex-end;
         margin-top: 8px;
 
         p {
           font-size: $small-text-size;
+          color: $font-text;
         }
 
         img {
@@ -229,7 +262,7 @@
         cursor: pointer;
 
         &:hover {
-          background: $font-link;
+          background: $font-link-active;
         }
       }
     }
@@ -257,7 +290,6 @@
       & > div {
         display: flex;
         align-items: flex-start;
-        justify-content: flex-end;
         margin-bottom: 5px;
         flex-wrap: wrap;
         max-width: 260px;
@@ -306,7 +338,7 @@
       div:last-child {
         p {
           width: 95px;
-          color: $font-link;
+          color: $font-text;
         }
       }
     }
@@ -360,34 +392,76 @@
     display: none;
     padding: 0;
   }
+
+  .rooms__list .room__card {
+    grid-template-areas:
+      "image title name"
+      "image icons icons"
+      ". services services"
+      ". btn cost";
+  }
+
+  .room__card_name {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+
+    div {
+      flex-direction: column;
+    }
+  }
+
+  .rooms .rooms__list .room__card_icons {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    border-top: 1px solid;
+  }
+
+  .rooms .rooms__list .room__card_services {
+    display: flex;
+    justify-content: center !important;
+    width: 100%;
+    margin-right: 0 !important;
+    margin-left: 0px;
+    max-width: none;
+    padding-top: 20px;
+    border-top: 1px solid;
+
+    & > div {
+      flex-wrap: nowrap;
+      max-width: none;
+
+      div {
+        display: flex;
+        margin-right: 7px;
+        margin-left: 7px;
+        justify-content: center;
+        flex-wrap: wrap;
+        text-align: center;
+      }
+    }
+  }
+
+  .rooms .rooms__list .room__card .room__card_cost {
+    flex-wrap: wrap;
+
+    div:first-child {
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+
+    div:last-child {
+      text-align: right;
+    }
+  }
+
+  .room__card_btn {
+    align-self: flex-end;
+  }
 }
 
 @media screen and (max-width: 768px) {
-  .rooms__list .room__card {
-    padding: 0;
-
-    .room__card_title {
-      margin-top: 20px;
-    }
-
-    .room__card_btn {
-      margin-bottom: 20px;
-    }
-
-    .room__card_icons {
-      margin-top: 20px;
-      margin-right: 20px;
-    }
-
-    .room__card_services {
-      margin-right: 20px;
-    }
-
-    .room__card_cost {
-      margin-bottom: 20px;
-      margin-right: 20px;
-    }
-  }
 }
 
 @media screen and (max-width: 576px) {
@@ -399,24 +473,25 @@
   .rooms__list .room__card {
     display: grid;
     gap: 10px;
+    grid-template-rows: 150px;
     grid-template-areas:
-      "image title"
-      "image name"
-      "image btn"
-      "icons cost"
-      "services services";
+      "image image"
+      "title name"
+      "icons icons"
+      "services services"
+      "cost cost"
+      "btn btn";
+    grid-template-columns: 1fr 1fr;
   }
 
-  .room__card_name {
+  .rooms .room__card .room__card_name {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: flex-end;
 
     div {
       display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      justify-content: flex-start;
+      align-items: center;
     }
 
     img {
@@ -428,7 +503,6 @@
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    margin-bottom: 0 !important;
 
     div:first-child {
       margin-bottom: 15px;
@@ -446,22 +520,35 @@
     }
   }
 
-  .rooms .rooms__list .room__card_icons {
-    display: flex;
-    justify-content: center;
+  .rooms .rooms__list .room__card_services {
+    padding-bottom: 20px;
   }
 
-  .room__card_services {
-    display: flex;
-    justify-content: center !important;
-    width: 100%;
+  .rooms .rooms__list .room__card .room__card_cost {
+    align-items: flex-end;
+    text-align: start;
     margin-bottom: 20px;
-    margin-right: 0 !important;
-    margin-left: 0px;
-    margin-top: 20px;
 
     div {
-      width: 260px;
+      align-items: baseline;
+      flex-direction: row;
+
+      &:first-child {
+        margin-bottom: 0;
+
+        p {
+          margin-right: 10px;
+        }
+      }
+
+      p {
+        text-align: start;
+        width: auto;
+      }
     }
+  }
+
+  .room__card_btn {
+    justify-self: end;
   }
 }

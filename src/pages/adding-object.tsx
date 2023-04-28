@@ -2,18 +2,18 @@
 import Link from "next/link";
 
 // styles
-import homeStyles from "../styles/Home.module.scss";
-import styles from "../styles/AddingObject.module.scss";
+import homeStyles from "@/styles/Home.module.scss";
+import styles from "@/styles/AddingObject.module.scss";
 
 // components
-import FirstStep from "@/components/prarts/AddingObject/FirstStep";
+import FirstStep from "@/components/parts/AddingObject/FirstStep";
 
 // store
 import { useAppSelector } from "@/store/store";
-import SecondStep from "@/components/prarts/AddingObject/SecondStep";
-import ThirdStep from "@/components/prarts/AddingObject/ThirdStep";
-import FourthStep from "@/components/prarts/AddingObject/FourthStep";
-import FiveStep from "@/components/prarts/AddingObject/FiveStep";
+import SecondStep from "@/components/parts/AddingObject/SecondStep";
+import ThirdStep from "@/components/parts/AddingObject/ThirdStep";
+import FourthStep from "@/components/parts/AddingObject/FourthStep";
+import FiveStep from "@/components/parts/AddingObject/FiveStep";
 
 export default function AddingObject() {
   const pageNumber = useAppSelector((state) => state.pageNumber);

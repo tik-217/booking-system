@@ -2,7 +2,12 @@ import Link from "next/link";
 import Image from "next/image";
 import React from "react";
 
-import styles from "../styles/Home.module.scss";
+import apple from "@/assets/icons/apple-logo.svg";
+import googlePlay from "@/assets/icons/google-play.svg";
+import menu from "@/assets/icons/menu.svg";
+import colse from "@/assets/icons/close.svg";
+
+import styles from "@/styles/Home.module.scss";
 import { useAppDispatch, useAppSelector } from "@/store/store";
 import { setIsOpenMenu } from "@/store/reducers";
 
@@ -21,19 +26,14 @@ export default function HeaderTop() {
         <div className={styles.header__top_descktop}>
           <div className={styles.header__top_icons}>
             <Link href={"https://apple.com"} target="_blank">
-              <Image
-                height={18}
-                width={15}
-                src={"/icons/apple-logo.svg"}
-                alt={"apple logo"}
-              />
+              <Image height={18} width={15} src={apple} alt={"apple logo"} />
             </Link>
             <Link href={"https://google.com"} target="_blank">
               <Image
                 height={18}
                 width={15}
-                src={"/icons/google-play.svg"}
-                alt={"apple logo"}
+                src={googlePlay}
+                alt={"goole play logo"}
               />
             </Link>
           </div>
@@ -64,7 +64,7 @@ export default function HeaderTop() {
           className={styles.header__topWrapper_menu}
           onClick={() => dispatch(setIsOpenMenu(true))}
         >
-          <Image height={30} width={30} src={"/icons/menu.svg"} alt={"menu"} />
+          <Image height={30} width={30} src={menu} alt={"menu"} />
         </div>
         <div
           className={`${
@@ -77,28 +77,18 @@ export default function HeaderTop() {
             className={styles.close__icons}
             onClick={() => dispatch(setIsOpenMenu(false))}
           >
-            <Image
-              height={30}
-              width={30}
-              src={"/icons/close.svg"}
-              alt="close"
-            />
+            <Image height={30} width={30} src={colse} alt="close" />
           </div>
           <div>
             <Link href={"https://apple.com"} target="_blank">
-              <Image
-                height={18}
-                width={15}
-                src={"/icons/apple-logo.svg"}
-                alt={"apple logo"}
-              />
+              <Image height={18} width={15} src={apple} alt={"apple logo"} />
             </Link>
             <Link href={"https://google.com"} target="_blank">
               <Image
                 height={18}
                 width={15}
-                src={"/icons/google-play.svg"}
-                alt={"apple logo"}
+                src={googlePlay}
+                alt={"google play logo"}
               />
             </Link>
           </div>

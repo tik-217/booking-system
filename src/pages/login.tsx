@@ -2,8 +2,12 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-import styles from "../styles/Login.module.scss";
+import styles from "@/styles/Login.module.scss";
 import { Field, Form, Formik } from "formik";
+
+import apple from "@/assets/icons/apple-logo-black.svg";
+import google from "@/assets/icons/google.svg";
+import yandex from "@/assets/icons/yandex.svg";
 
 import * as Yup from "yup";
 
@@ -40,7 +44,9 @@ export default function Login() {
               <label htmlFor="password">Password</label>
               <Field type="password" id="password" name="password" />
             </div>
-            <input type="submit" value="Войти" />
+            <Link href={"/account"}>
+              <input type="submit" value="Войти" />
+            </Link>
           </Form>
         </Formik>
         <div className={styles.login__moreAction}>
@@ -48,29 +54,19 @@ export default function Login() {
           <Link href="/signUp">Создать аккаунт</Link>
         </div>
         <div className={styles.login__icons}>
-          <Link href={"https://apple.com/"}>
-            <Image
-              height={20}
-              width={20}
-              src={"/icons/apple-logo-black.svg"}
-              alt={"apple logo"}
-            />
+          <Link href={"https://apple.com"}>
+            <Image height={20} width={20} src={apple} alt={"apple logo"} />
           </Link>
           <Link href={"https://google.com/"}>
             <Image
               height={20}
               width={20}
-              src={"/icons/google.svg"}
-              alt={"apple logo"}
+              src={google}
+              alt={"google play logo"}
             />
           </Link>
           <Link href={"https://ya.ru/"}>
-            <Image
-              height={20}
-              width={20}
-              src={"/icons/yandex.svg"}
-              alt={"apple logo"}
-            />
+            <Image height={20} width={20} src={yandex} alt={"apple logo"} />
           </Link>
         </div>
       </div>

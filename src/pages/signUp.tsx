@@ -1,10 +1,14 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Field, Form, Formik } from "formik";
 import * as Yup from "yup";
 
-import styles from "../styles/SignUp.module.scss";
+import apple from "@/assets/icons/apple-logo-black.svg";
+import google from "@/assets/icons/google.svg";
+import yandex from "@/assets/icons/yandex.svg";
+
+import styles from "@/styles/SignUp.module.scss";
 
 const authFormValidate = Yup.object().shape({
   login: Yup.string().required("*"),
@@ -128,7 +132,7 @@ export default function SignUp() {
                       <Image
                         height={20}
                         width={20}
-                        src={"/icons/apple-logo-black.svg"}
+                        src={apple}
                         alt={"apple logo"}
                       />
                     </Link>
@@ -136,7 +140,7 @@ export default function SignUp() {
                       <Image
                         height={20}
                         width={20}
-                        src={"/icons/google.svg"}
+                        src={google}
                         alt={"apple logo"}
                       />
                     </Link>
@@ -144,7 +148,7 @@ export default function SignUp() {
                       <Image
                         height={20}
                         width={20}
-                        src={"/icons/yandex.svg"}
+                        src={yandex}
                         alt={"apple logo"}
                       />
                     </Link>
